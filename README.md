@@ -30,7 +30,7 @@ Specialized in:
 
 ## Live Version
 
-👉 https://rafmoura25.github.io/rafael-moura/
+👉 [https://rafmoura25.github.io/rafael-moura/](https://rafmoura25.github.io/rafael-moura-cv/)
 
 ---
 
