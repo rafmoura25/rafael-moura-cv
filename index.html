@@ -1,89 +1,161 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/lucide@latest"></script>
   <title>Rafael Moura | Tech Manager</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
   <header class="topbar">
-    <div class="logo">RM</div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <div class="brand"></div>
     <div class="controls">
-      <button onclick="toggleLanguage()" id="langToggle">EN</button>
-      <button onclick="toggleTheme()" id="themeToggle">🌙</button>
+      <button id="langToggle">EN</button>
+      <button id="themeToggle">☀️</button>
     </div>
   </header>
 
-  <main class="container">
+  <main class="layout">
 
-    <section class="hero">
-      <h1 data-pt="Rafael Moura" data-en="Rafael Moura">Rafael Moura</h1>
-      <h2 data-pt="Tech Manager | Engineering Manager"
-          data-en="Tech Manager | Engineering Manager">
-          Tech Manager | Engineering Manager
+    <!-- LEFT COLUMN -->
+    <aside class="sidebar fade-left">
+
+      <img src="profile.png" alt="Rafael Moura" class="profile-img" />
+
+      <h1>Rafael Moura</h1>
+      <h2 data-pt="Tech Manager | Engineering Manager | Engineering Leader"
+        data-en="Tech Manager | Engineering Manager | Engineering Leader">
+        Tech Manager | Engineering Manager | Engineering Leader
       </h2>
 
-      <p data-pt="Mais de 13 anos liderando times de alta performance e construindo produtos digitais escaláveis."
-         data-en="13+ years leading high performance teams and building scalable digital products.">
-      </p>
+      <div class="contact">
+        <div class="contact-item">
+          <i data-lucide="map-pin"></i>
+          <span>São Paulo, Brasil</span>
+        </div>
 
-      <div class="links">
-        <a href="mailto:rafmoura25@gmail.com">Email</a>
-        <a href="https://rafaelmoura.dev" target="_blank">Blog</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <div class="contact-item">
+          <i data-lucide="at-sign"></i>
+          <span>rafmoura25@gmail.com</span>
+        </div>
+
+        <div class="contact-item">
+          <i data-lucide="globe"></i>
+          <a href="https://rafaelmoura.dev" target="_blank">
+            rafaelmoura.dev
+          </a>
+        </div>
       </div>
-    </section>
 
-    <section>
-      <h3 data-pt="Resumo Profissional" data-en="Professional Summary"></h3>
-      <p data-pt="Experiência sólida em liderança técnica, arquitetura distribuída e soluções em nuvem (AWS, GCP). Foco em escalabilidade, eficiência de custos e excelência de engenharia."
-         data-en="Strong experience in technical leadership, distributed architecture and cloud solutions (AWS, GCP). Focused on scalability, cost efficiency and engineering excellence.">
-      </p>
-    </section>
 
-    <section>
-      <h3 data-pt="Experiência" data-en="Experience"></h3>
+      <div class="block">
+        <h3 data-pt="Stack" data-en="Stack">Stack</h3>
+        <ul>
+          <li>Java · Kotlin · C# .NET</li>
+          <li>Go · Python</li>
+          <li>AWS · GCP · Azure</li>
+          <li>Kubernetes</li>
+          <li>Kafka</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3 data-pt="Leadership" data-en="Leadership">Leadership</h3>
+        <ul>
+          <li data-pt="Gestão de Times de Alta Performance" data-en="High-Performance Team Leadership">
+            Gestão de Times de Alta Performance
+          </li>
+          <li data-pt="Mentoria e Desenvolvimento de Carreira" data-en="Career Development & Mentorship">
+            Mentoria e Desenvolvimento de Carreira
+          </li>
+          <li data-pt="Product Discovery" data-en="Product Discovery">
+            Product Discovery
+          </li>
+          <li data-pt="Arquitetura Estratégica" data-en="Strategic Architecture">
+            Arquitetura Estratégica
+          </li>
+          <li data-pt="Definição de OKRs e KPIs" data-en="OKR & KPI Definition">
+            Definição de OKRs e KPIs
+          </li>
+        </ul>
+      </div>
 
-      <div class="card">
-        <h4>Mercado Livre</h4>
-        <span>Tech Manager (2024–2026)</span>
-        <p data-pt="Liderança de assistente GenAI para Customer Experience. Definição de arquitetura e integrações sociais."
-           data-en="Led GenAI assistant for Customer Experience. Defined architecture and social media integrations.">
+      <div class="block">
+        <h3 data-pt="Agile & Engineering" data-en="Agile & Engineering">
+          Agile & Engineering
+        </h3>
+        <ul>
+          <li>Scrum</li>
+          <li>Kanban</li>
+          <li>Jira</li>
+          <li>Confluence</li>
+          <li>CI/CD</li>
+          <li data-pt="Revisão Técnica (PRs)" data-en="Technical Reviews (PRs)">
+            Revisão Técnica (PRs)
+          </li>
+          <li data-pt="Métricas de Engenharia" data-en="Engineering Metrics">
+            Métricas de Engenharia
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- RIGHT COLUMN -->
+    <section class="content fade-in delay-1">
+
+      <div class="section">
+        <h3 data-pt="Resumo Profissional" data-en="Professional Summary">
+          Resumo Profissional
+        </h3>
+
+        <p data-pt="Mais de 13 anos de experiência em tecnologia, unindo liderança de pessoas e forte base técnica. Atuação focada em gestão de times de alta performance, acompanhamento de carreira, cerimônias ágeis, métricas e OKRs, com mentalidade de melhoria contínua. 
+      Experiência sólida no desenvolvimento de produtos digitais, integrações complexas e soluções orientadas a APIs. Forte atuação em arquitetura de sistemas distribuídos e em nuvem (AWS e Google Cloud), com foco em escalabilidade, performance, observabilidade e eficiência de custos. "
+          data-en="13+ years of experience in technology, combining people leadership with a strong technical foundation. Proven track record in leading high-performance teams, career development, agile ceremonies, metrics and OKRs, with a continuous improvement mindset.
+
+         Solid experience in building digital products, complex integrations, and API-driven solutions. Strong background in distributed systems and cloud architecture (AWS and Google Cloud), focused on scalability, performance, observability, and cost efficiency.">
         </p>
       </div>
 
-      <div class="card">
-        <h4>Alliança</h4>
-        <span>Tech Manager (2021–2024)</span>
-        <p data-pt="Estruturação de times do zero e construção de 5 produtos digitais."
-           data-en="Built engineering teams from scratch and delivered 5 digital products.">
-        </p>
+      <div class="section">
+        <h3 data-pt="Experiência" data-en="Experience">Experiência</h3>
+
+        <div class="card fade-in delay-2">
+          <h4>Mercado Livre</h4>
+          <span>Software Project Lead (2024–2026)</span>
+          <p data-pt="Liderança de equipe responsável pela concepção e implementação de um assistente baseado em Inteligência Artificial Generativa (GenAI) voltado para Customer Experience. Coordenação transversal entre múltiplas áreas de negócio, com atuação na definição de arquitetura, entrega de Model Context Protocols (MCPs) e desenvolvimento de soluções robustas e eficientes em Go."
+            data-en="Led the conception and implementation of a Generative AI (GenAI) assistant for Customer Experience. Coordinated cross-functional initiatives across multiple business areas, driving architectural decisions, delivery of Model Context Protocols (MCPs), and the development of robust and efficient Go-based solutions.">
+          </p>
+
+          <p data-pt="Liderança do time responsável pelas integrações entre canais de redes sociais (Meta/Facebook, Instagram e X) e os sistemas de atendimento ao cliente, com foco na construção de soluções escaláveis em Go."
+            data-en="Led the team responsible for integrating social media channels (Meta/Facebook, Instagram, and X) with customer support systems, focusing on building scalable Go solutions.">
+          </p>
+        </div>
+
+        <div class="card fade-in delay-2">
+          <h4>Alliança</h4>
+          <span>Tech Manager (2021–2024)</span>
+          <p data-pt="Estruturação de times do zero e construção de 5 produtos digitais."
+            data-en="Built engineering teams from scratch and delivered 5 digital products.">
+          </p>
+        </div>
+
       </div>
 
-    </section>
-
-    <section>
-      <h3 data-pt="Stack & Competências" data-en="Stack & Skills"></h3>
-      <div class="skills">
-        <span>Go</span>
-        <span>Java</span>
-        <span>Python</span>
-        <span>AWS</span>
-        <span>GCP</span>
-        <span>Kubernetes</span>
-        <span>Kafka</span>
-        <span>Leadership</span>
-      </div>
     </section>
 
   </main>
 
   <footer>
-    © 2026 Rafael Moura · Built with HTML & CSS · Hosted on GitHub Pages
+    © 2026 Rafael Moura · Built with HTML & CSS · GitHub Pages
   </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,99 +1,258 @@
 :root {
+    --bg: #0b1120;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --primary: #6366f1;
+    --card: #111827;
+    --border: rgba(255,255,255,0.06);
+  }
+  
+  [data-theme="light"] {
     --bg: #ffffff;
     --text: #0f172a;
     --muted: #64748b;
-    --primary: #2563eb;
+    --primary: #4f46e5;
     --card: #f8fafc;
-  }
-  
-  [data-theme="dark"] {
-    --bg: #0f172a;
-    --text: #f8fafc;
-    --muted: #94a3b8;
-    --primary: #3b82f6;
-    --card: #1e293b;
+    --border: rgba(0,0,0,0.06);
   }
   
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Inter, sans-serif;
+    font-family: "Inter", sans-serif;
   }
   
   body {
     background: var(--bg);
     color: var(--text);
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+    line-height: 1.6;
   }
   
+  /* Topbar */
   .topbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 28px 40px;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    align-items: center;
   }
   
-  .logo {
-    font-weight: bold;
-    font-size: 20px;
+  .brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
   }
   
   .controls button {
     margin-left: 10px;
-    padding: 8px 12px;
-    border: none;
-    cursor: pointer;
-    background: var(--card);
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
     color: var(--text);
-    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s ease;
   }
   
-  .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
+  .controls button:hover {
+    background: var(--card);
   }
   
-  .hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+  /* Layout */
+  .layout {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 70px;
+    padding: 0 40px;
   }
   
-  .hero h2 {
-    color: var(--primary);
-    margin-bottom: 15px;
+  /* Sidebar */
+  .sidebar {
+    position: sticky;
+    top: 40px;
   }
   
-  .links a {
-    margin-right: 15px;
+  .profile-img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    border: 3px solid var(--border);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  }
+  
+  .sidebar h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  .sidebar h2 {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 25px;
+    font-weight: 400;
+  }
+  
+  .contact p, .contact a {
+    font-size: 14px;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 6px;
     text-decoration: none;
-    color: var(--primary);
   }
   
-  section {
-    margin-top: 60px;
+  .block {
+    margin-top: 40px;
+  }
+  
+  .block h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    color: var(--muted);
+  }
+  
+  .block li {
+    list-style: none;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  /* Content */
+  .section {
+    margin-bottom: 70px;
+  }
+  
+  .section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .section h3::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: var(--primary);
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+  }
+  
+  .section p {
+    color: var(--muted);
+    max-width: 700px;
   }
   
   .card {
     background: var(--card);
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    transition: 0.3s ease;
   }
   
-  .skills span {
-    display: inline-block;
-    background: var(--card);
-    padding: 8px 12px;
-    margin: 5px;
-    border-radius: 20px;
-    font-size: 14px;
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
   }
   
+  .card h4 {
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .card span {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    display: block;
+  }
+  
+  /* Footer */
   footer {
     text-align: center;
-    margin: 60px 0 30px;
+    margin: 80px 0 40px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1000px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+  
+    .sidebar {
+      position: relative;
+      text-align: center;
+    }
+  
+    .profile-img {
+      margin: 0 auto 25px;
+    }
+  }
+  
+  /* ---------- ENTRY ANIMATIONS ---------- */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+  }
+  
+  .fade-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeLeft 0.8s ease forwards;
+  }
+  
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.4s; }
+  .delay-3 { animation-delay: 0.6s; }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .block {
+    margin-top: 45px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
     font-size: 14px;
     color: var(--muted);
+  }
+  
+  .contact-item i {
+    width: 16px;
+    height: 16px;
+    stroke: var(--primary);
   }
   
